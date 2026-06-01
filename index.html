@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Suds Wilmington | Enhance Amenities Today – Rent Washers &amp; Dryers</title>
+  <meta name="description" content="Suds Wilmington offers turnkey in-unit washer and dryer rentals for apartment complexes and multi-family housing in Wilmington, NC, providing maintenance-free solutions to boost tenant satisfaction." />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Suds Wilmington" />
+  <meta property="og:title" content="Suds Wilmington | Enhance Amenities Today – Rent Washers &amp; Dryers" />
+  <meta property="og:url" content="https://www.sudslaundryrentals.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Suds Wilmington offers turnkey in-unit washer and dryer rentals for apartment complexes and multi-family housing in Wilmington, NC, providing maintenance-free solutions to boost tenant satisfaction." />
+  <meta property="og:image" content="images/Suds+Logo.webp" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Suds Wilmington | Enhance Amenities Today – Rent Washers &amp; Dryers" />
+  <meta name="twitter:description" content="Suds Wilmington offers turnkey in-unit washer and dryer rentals for apartment complexes and multi-family housing in Wilmington, NC, providing maintenance-free solutions to boost tenant satisfaction." />
+  <meta name="twitter:image" content="images/Suds+Logo.webp" />
+
+  <link rel="canonical" href="https://www.sudslaundryrentals.com" />
+
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Design tokens ─────────────────────────────────────── */
+    :root {
+      --navy:   #0b1f3a;
+      --blue:   #1a4f8a;
+      --sky:    #2e86de;
+      --orange: #e07b30;
+      --white:  #ffffff;
+      --off-white: #f5f7fa;
+      --light-gray: #e8ecf0;
+      --text:   #1c2b3a;
+      --muted:  #5a7080;
+
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body:    'Barlow', sans-serif;
+
+      --max-w: 1200px;
+      --section-pad: 80px 5vw;
+      --radius: 8px;
+      --shadow: 0 4px 24px rgba(11,31,58,.12);
+    }
+
+    /* ── Reset ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ── Skip link ─────────────────────────────────────────── */
+    .skip-link {
+      position: absolute; top: -40px; left: 0; background: var(--navy);
+      color: var(--white); padding: 8px 16px; z-index: 999;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ── Utility ───────────────────────────────────────────── */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 5vw; }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s, background .15s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+    .btn-primary   { background: var(--orange); color: var(--white); }
+    .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); }
+    .btn-secondary:hover { background: var(--white); color: var(--navy); }
+
+    /* ── Header / Nav ──────────────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(11,31,58,.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 5vw;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .nav-logo img { height: 52px; width: auto; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: .95rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--navy);
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--sky); }
+    .nav-cta {
+      background: var(--orange); color: var(--white) !important;
+      padding: 10px 22px; border-radius: 50px;
+    }
+    .nav-cta:hover { background: #c96820 !important; color: var(--white) !important; }
+
+    /* Hamburger (mobile) */
+    .nav-toggle {
+      display: none;
+      flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .nav-toggle span {
+      display: block; width: 26px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: all .25s;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+    /* Mobile nav overlay */
+    .nav-mobile {
+      display: none;
+      position: fixed; inset: 0; z-index: 99;
+      background: var(--navy);
+      flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 32px;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-display);
+      font-size: 2rem; font-weight: 700;
+      color: var(--white); letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .nav-mobile-close {
+      position: absolute; top: 24px; right: 24px;
+      background: none; border: none; cursor: pointer;
+      color: var(--white); font-size: 2rem; line-height: 1;
+    }
+
+    /* ── Hero ──────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex; align-items: center;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('images/Suds+hero+image.webp');
+      background-size: cover; background-position: center;
+      opacity: .35;
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: var(--max-w); margin: 0 auto; padding: 80px 5vw;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: .9rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700; line-height: 1.05;
+      color: var(--white);
+      max-width: 700px;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero-sub {
+      font-size: 1.15rem; color: rgba(255,255,255,.82);
+      margin: 24px 0 40px; max-width: 520px; line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* ── Benefits strip ────────────────────────────────────── */
+    .benefits-strip {
+      background: var(--sky);
+      padding: 28px 5vw;
+    }
+    .benefits-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px 32px;
+    }
+    .benefit-item {
+      display: flex; align-items: center; gap: 12px;
+      color: var(--white);
+    }
+    .benefit-item .icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(255,255,255,.2); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .benefit-item .icon svg { width: 18px; height: 18px; fill: var(--white); }
+    .benefit-item strong {
+      font-family: var(--font-display); font-size: 1.05rem;
+      font-weight: 700; letter-spacing: .02em;
+    }
+    .benefit-item span { font-size: .88rem; opacity: .88; }
+
+    /* ── Why Suds ──────────────────────────────────────────── */
+    #why-suds {
+      padding: var(--section-pad);
+      background: var(--off-white);
+    }
+    .section-label {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: .85rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--sky); margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 700; line-height: 1.1;
+      color: var(--navy); margin-bottom: 48px;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .why-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      display: flex; gap: 20px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .why-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(11,31,58,.16); }
+    .why-card-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      border-radius: var(--radius);
+      background: var(--sky);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .why-card-icon svg { width: 26px; height: 26px; fill: var(--white); }
+    .why-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 8px;
+    }
+    .why-card p { font-size: .93rem; color: var(--muted); line-height: 1.65; }
+
+    /* Washers photo + copy layout */
+    .why-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+      margin-top: 72px;
+    }
+    .why-feature-img {
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .why-feature-copy { display: flex; flex-direction: column; gap: 24px; }
+    .why-feature-copy h2 {
+      font-family: var(--font-display); font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 700; color: var(--navy); line-height: 1.15;
+    }
+    .why-feature-copy p { color: var(--muted); font-size: 1rem; line-height: 1.75; }
+
+    /* ── How It Works ──────────────────────────────────────── */
+    #how-it-works {
+      padding: var(--section-pad);
+      background: var(--navy);
+      color: var(--white);
+    }
+    #how-it-works .section-label { color: var(--orange); }
+    #how-it-works .section-title { color: var(--white); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+    .step {
+      position: relative;
+      padding: 36px 32px 32px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .step-num {
+      display: block;
+      font-family: var(--font-display); font-size: 4rem;
+      font-weight: 700; line-height: 1;
+      color: var(--orange); margin-bottom: 16px;
+    }
+    .step h3 {
+      font-family: var(--font-display); font-size: 1.3rem;
+      font-weight: 700; margin-bottom: 10px;
+    }
+    .step p { font-size: .93rem; color: rgba(255,255,255,.75); line-height: 1.65; }
+    .step-img { margin-top: 20px; border-radius: 6px; overflow: hidden; opacity: .9; }
+
+    /* ── Service Area ──────────────────────────────────────── */
+    #service-area {
+      padding: var(--section-pad);
+      background: var(--off-white);
+    }
+    .service-area-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .service-area-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .service-area-copy { display: flex; flex-direction: column; gap: 20px; }
+    .service-area-copy h2 { font-family: var(--font-display); font-size: clamp(1.7rem,2.8vw,2.4rem); font-weight: 700; color: var(--navy); line-height: 1.15; }
+    .service-area-copy p { color: var(--muted); font-size: 1rem; line-height: 1.75; }
+
+    /* ── About ─────────────────────────────────────────────── */
+    #about {
+      padding: var(--section-pad);
+      background: var(--white);
+    }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .about-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .about-copy { display: flex; flex-direction: column; gap: 20px; }
+    .about-copy h2 { font-family: var(--font-display); font-size: clamp(1.7rem,2.8vw,2.4rem); font-weight: 700; color: var(--navy); }
+    .about-copy p { color: var(--muted); line-height: 1.75; }
+
+    /* ── Contact / CTA Banner ──────────────────────────────── */
+    #contact {
+      padding: var(--section-pad);
+      background: var(--blue);
+      text-align: center;
+      color: var(--white);
+    }
+    #contact h2 {
+      font-family: var(--font-display); font-size: clamp(2rem,4vw,3rem);
+      font-weight: 700; margin-bottom: 16px;
+    }
+    #contact p { font-size: 1.1rem; opacity: .88; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .contact-form {
+      display: flex; flex-direction: column; gap: 16px;
+      max-width: 480px; margin: 0 auto;
+    }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%; padding: 14px 18px;
+      border: 2px solid rgba(255,255,255,.25);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.1);
+      color: var(--white); font-family: var(--font-body); font-size: 1rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,.55); }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: rgba(255,255,255,.7); }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+
+    /* ── Footer ────────────────────────────────────────────── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.7);
+      padding: 56px 5vw 32px;
+    }
+    .footer-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto; gap: 40px;
+      align-items: start; margin-bottom: 40px;
+    }
+    .footer-logo img { height: 48px; width: auto; margin-bottom: 16px; }
+    .footer-tagline { font-size: .92rem; max-width: 340px; line-height: 1.6; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; text-align: right; }
+    .footer-links a {
+      font-size: .9rem; transition: color .15s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-contact { display: flex; flex-direction: column; gap: 8px; text-align: right; }
+    .footer-contact a { font-size: .9rem; transition: color .15s; }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .83rem; flex-wrap: wrap; gap: 8px;
+    }
+    .footer-social a {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .88rem; transition: color .15s;
+    }
+    .footer-social a:hover { color: var(--white); }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+
+      .why-feature,
+      .service-area-inner,
+      .about-inner { grid-template-columns: 1fr; gap: 36px; }
+      .why-feature-img,
+      .service-area-img { order: -1; }
+
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-links, .footer-contact { text-align: left; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+
+      .hero h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to Content</a>
+
+  <!-- ── HEADER ──────────────────────────────────────────────── -->
+  <header>
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="/" class="nav-logo" aria-label="Suds Wilmington – Home">
+        <img
+          src="images/Suds+Logo.webp"
+          alt="Suds Wilmington"
+          width="120" height="52"
+        />
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#why-suds">Why Suds</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#service-area">Service Area</a></li>
+        <li><a href="#about">About</a></li>
+        <li>
+          <a
+            href="mailto:landman@servicelaundryrentals.com?subject=Pricing%20Request"
+            class="nav-cta"
+            aria-label="Request pricing by email"
+          >Request Pricing</a>
+        </li>
+      </ul>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile navigation">
+    <button class="nav-mobile-close" aria-label="Close menu">&times;</button>
+    <a href="#why-suds">Why Suds</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#service-area">Service Area</a>
+    <a href="#about">About</a>
+    <a href="mailto:landman@servicelaundryrentals.com?subject=Pricing%20Request" class="btn btn-primary">Request Pricing</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ── HERO ──────────────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg" role="presentation" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Wilmington, NC</p>
+        <h1 id="hero-heading">
+          Upgrade Your Amenities.<br />
+          <span>Eliminate the Maintenance.</span>
+        </h1>
+        <p class="hero-sub">
+          Turnkey in-unit washer and dryer rentals for apartment complexes
+          and multi-family housing in Wilmington, NC.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="mailto:landman@servicelaundryrentals.com?subject=Pricing%20Request"
+            class="btn btn-primary"
+          >Request Pricing</a>
+          <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BENEFITS STRIP ─────────────────────────────────────── -->
+    <div class="benefits-strip" aria-label="Key benefits">
+      <div class="benefits-inner">
+
+        <div class="benefit-item">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <div>
+            <strong>Zero Capital</strong>
+            <span> Investment</span>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <div>
+            <strong>Free Delivery</strong>
+            <span> &amp; Installation</span>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <div>
+            <strong>Ongoing</strong>
+            <span> Maintenance Included</span>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <div>
+            <strong>Boost Tenant</strong>
+            <span> Retention</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── WHY SUDS ───────────────────────────────────────────── -->
+    <section id="why-suds" aria-labelledby="why-suds-heading">
+      <div class="container" style="padding-top:80px; padding-bottom:80px;">
+
+        <p class="section-label">Benefits</p>
+        <h2 id="why-suds-heading" class="section-title">
+          Why Suds for Complex Owners &amp; Managers
+        </h2>
+
+        <div class="why-grid">
+
+          <article class="why-card">
+            <div class="why-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+            </div>
+            <div>
+              <h3>Zero Capital Investment</h3>
+              <p>Equip your units without any upfront cost. We supply the machines; you keep the cash.</p>
+            </div>
+          </article>
+
+          <article class="why-card">
+            <div class="why-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+            </div>
+            <div>
+              <h3>We Handle Maintenance</h3>
+              <p>Ongoing service and support included. Fewer headaches for your management team.</p>
+            </div>
+          </article>
+
+          <article class="why-card">
+            <div class="why-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            </div>
+            <div>
+              <h3>Tenant Retention</h3>
+              <p>Increase lease renewals with a high-value in-unit laundry amenity residents love.</p>
+            </div>
+          </article>
+
+          <article class="why-card">
+            <div class="why-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+            </div>
+            <div>
+              <h3>Turnkey Solution</h3>
+              <p>From delivery and installation to haul-away and repairs — we handle everything end to end.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Washers feature image + copy -->
+        <div class="why-feature">
+          <div class="why-feature-img">
+            <img
+              src="images/washing+machines+2.webp"
+              alt="A pair of white front-loading washing machines side by side with digital control panels"
+              width="600" height="450"
+              loading="lazy"
+            />
+          </div>
+          <div class="why-feature-copy">
+            <p class="section-label">High Quality Equipment</p>
+            <h2>Local Inventory.<br />Local Support.</h2>
+            <p>
+              Suds Wilmington provides reliable, in-unit washer and dryer solutions
+              without the cost or hassle of ownership. We are dedicated to friendly,
+              dependable service — and because we're local, we can respond fast when
+              your tenants need us.
+            </p>
+            <a
+              href="mailto:landman@servicelaundryrentals.com?subject=Pricing%20Request"
+              class="btn btn-primary"
+              style="align-self: flex-start;"
+            >Get a Quote</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ───────────────────────────────────────── -->
+    <section id="how-it-works" aria-labelledby="how-heading">
+      <div class="container" style="padding-top:80px; padding-bottom:80px;">
+
+        <p class="section-label">Process</p>
+        <h2 id="how-heading" class="section-title">How It Works</h2>
+
+        <div class="steps-grid">
+
+          <article class="step">
+            <span class="step-num" aria-label="Step 1">01</span>
+            <h3>Consultation</h3>
+            <p>We assess your property's needs and recommend the right washer and dryer setup for each unit type.</p>
+            <div class="step-img">
+              <img
+                src="images/orange+1.webp"
+                alt="Step 1 icon"
+                width="60" height="60"
+                loading="lazy"
+                style="border-radius:50%; width:60px; height:60px; object-fit:contain;"
+              />
+            </div>
+          </article>
+
+          <article class="step">
+            <span class="step-num" aria-label="Step 2">02</span>
+            <h3>Rapid Delivery</h3>
+            <p>Free local delivery and professional installation. We coordinate directly with your property management team.</p>
+            <div class="step-img">
+              <img
+                src="images/wokerman.webp"
+                alt="Technician delivering washing machine — Free Installation &amp; Haul-Away"
+                width="120" height="120"
+                loading="lazy"
+                style="max-width:120px;"
+              />
+            </div>
+          </article>
+
+          <article class="step">
+            <span class="step-num" aria-label="Step 3">03</span>
+            <h3>Ongoing Care</h3>
+            <p>We manage all haul-away, service calls, and repairs — keeping your units running and your tenants happy.</p>
+            <div class="step-img">
+              <img
+                src="images/Orange+3.webp"
+                alt="Step 3 icon"
+                width="60" height="60"
+                loading="lazy"
+                style="border-radius:50%; width:60px; height:60px; object-fit:contain;"
+              />
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SERVICE AREA ───────────────────────────────────────── -->
+    <section id="service-area" aria-labelledby="service-heading">
+      <div class="container" style="padding-top:80px; padding-bottom:80px;">
+
+        <div class="service-area-inner">
+          <div class="service-area-img">
+            <img
+              src="images/Wilmington+Riverwalk+Suds.webp"
+              alt="Wilmington, NC Riverwalk"
+              width="600" height="450"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-area-copy">
+            <p class="section-label">Where We Serve</p>
+            <h2 id="service-heading">
+              Proudly Serving Wilmington, NC and Surrounding Areas
+            </h2>
+            <p>
+              We specialize in the Wilmington market and surrounding communities.
+              Our local presence means faster response times and a team that
+              genuinely understands your property's needs.
+            </p>
+            <a
+              href="mailto:landman@servicelaundryrentals.com?subject=Pricing%20Request"
+              class="btn btn-primary"
+              style="align-self: flex-start;"
+            >Check My Area</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── ABOUT ──────────────────────────────────────────────── -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container" style="padding-top:80px; padding-bottom:80px;">
+
+        <div class="about-inner">
+          <div class="about-copy">
+            <p class="section-label">About Us</p>
+            <h2 id="about-heading">Friendly, Dependable Service</h2>
+            <p>
+              Suds Wilmington provides reliable, in-unit washer and dryer solutions
+              without the cost or hassle of ownership. We are dedicated to making
+              in-unit laundry accessible for every apartment community in the
+              Wilmington area.
+            </p>
+            <p>
+              Our team handles everything — from the initial consultation through
+              delivery, installation, and long-term maintenance — so you can focus
+              on running your property.
+            </p>
+          </div>
+          <div class="about-img">
+            <img
+              src="images/High+Quality+Equipment+Instagram+Post.webp"
+              alt="High Quality Equipment badge"
+              width="600" height="600"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CONTACT / CTA ──────────────────────────────────────── -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading">Ready to Upgrade Your Amenities?</h2>
+        <p>Tell us about your property and we'll put together a pricing package — no commitment required.</p>
+
+        <!-- NOTE: Replace this form action with your backend / Formspree / Netlify Forms endpoint -->
+        <form
+          class="contact-form"
+          action="mailto:landman@servicelaundryrentals.com"
+          method="POST"
+          enctype="text/plain"
+          aria-label="Contact form"
+        >
+          <input type="text"   name="name"     placeholder="Your Name"           required autocomplete="name" />
+          <input type="email"  name="email"    placeholder="Email Address"        required autocomplete="email" />
+          <input type="tel"    name="phone"    placeholder="Phone Number"                  autocomplete="tel" />
+          <input type="text"   name="property" placeholder="Property Name / Units" />
+          <textarea            name="message"  placeholder="Tell us about your property…"></textarea>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer aria-label="Site footer">
+    <div class="footer-inner">
+
+      <div>
+        <a href="/" class="footer-logo" aria-label="Suds Wilmington – Home">
+          <img
+            src="images/Suds+White+Logo.webp"
+            alt="Suds Wilmington"
+            width="120" height="48"
+            loading="lazy"
+          />
+        </a>
+        <p class="footer-tagline">
+          Turnkey in-unit washer &amp; dryer rentals for apartment complexes
+          and multi-family housing in Wilmington, NC.
+        </p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <ul class="footer-links" role="list" aria-label="Footer navigation">
+          <li><a href="#why-suds">Why Suds</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#service-area">Service Area</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+        </ul>
+        <ul class="footer-contact" role="list" aria-label="Contact info">
+          <li>
+            <a href="tel:9108009041">(910) 800 9041</a>
+          </li>
+          <li>
+            <a href="mailto:landman@servicelaundryrentals.com">
+              landman@servicelaundryrentals.com
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Suds Wilmington. All Rights Reserved.</span>
+      <div class="footer-social">
+        <a
+          href="https://www.facebook.com/profile.php?id=61580691160215"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Suds Wilmington on Facebook"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          @SudsWilmington
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── JS: mobile nav toggle ─────────────────────────────────── -->
+  <script>
+    const toggle  = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const closeBtn  = document.querySelector('.nav-mobile-close');
+
+    function openNav() {
+      mobileNav.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNav() {
+      mobileNav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', openNav);
+    closeBtn.addEventListener('click', closeNav);
+
+    // Close when any link is clicked
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+
+    // Close on Escape key
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+  </script>
+
+</body>
+</html>
