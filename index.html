@@ -69,6 +69,9 @@
 
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 6vw; }
 
+    /* Offset anchored sections so they aren't hidden behind the sticky header */
+    #about, #service-area, #why-suds, #how-it-works { scroll-margin-top: 90px; }
+
     /* ── Buttons ───────────────────────────────────────────── */
     .btn {
       display: inline-block;
@@ -114,17 +117,21 @@
     .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
 
     .nav-mobile {
-      display: none; position: fixed; inset: 0; z-index: 99;
+      display: none; position: fixed; inset: 0; z-index: 200;
       background: var(--navy); flex-direction: column;
       align-items: center; justify-content: center; gap: 32px;
     }
     .nav-mobile.open { display: flex; }
     .nav-mobile a { font-size: 1.8rem; font-weight: 600; color: var(--white); }
     .nav-mobile-close {
-      position: absolute; top: 24px; right: 28px;
+      position: absolute; top: 18px; right: 18px;
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
       background: none; border: none; cursor: pointer;
-      color: var(--white); font-size: 2.2rem; line-height: 1;
+      color: var(--white); font-size: 2.6rem; line-height: 1;
+      -webkit-tap-highlight-color: transparent;
     }
+    .nav-mobile-close:hover { opacity: .75; }
 
     /* ── Hero ──────────────────────────────────────────────── */
     .hero {
@@ -303,7 +310,7 @@
   <!-- ── HEADER ──────────────────────────────────────────────── -->
   <header>
     <nav class="nav-inner" aria-label="Main navigation">
-      <a href="/" class="nav-logo" aria-label="Suds Wilmington – Home">
+      <a href="index.html" class="nav-logo" aria-label="Suds Wilmington – Home">
         <img src="images/Suds+Logo.webp" alt="Suds Wilmington" width="120" height="54" />
       </a>
       <ul class="nav-links" role="list">
@@ -442,7 +449,7 @@
     <div class="footer-inner">
 
       <div class="footer-logo">
-        <a href="/" aria-label="Suds Wilmington – Home">
+        <a href="index.html" aria-label="Suds Wilmington – Home">
           <img src="images/Suds+White+Logo.webp" alt="Suds Wilmington" width="160" height="64" loading="lazy" />
         </a>
       </div>
@@ -450,7 +457,7 @@
       <nav class="footer-col" aria-label="Footer navigation">
         <a href="#about">About</a>
         <a href="#service-area">Service Area</a>
-        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </nav>
 
       <div class="footer-col footer-contact">
@@ -491,7 +498,11 @@
       toggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
-    toggle.addEventListener('click', openNav);
+    function toggleNav() {
+      mobileNav.classList.contains('open') ? closeNav() : openNav();
+    }
+
+    toggle.addEventListener('click', toggleNav);
     closeBtn.addEventListener('click', closeNav);
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
