@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | Suds Wilmington</title>
+  <meta name="description" content="Privacy Policy for Suds Wilmington — how we collect, use, disclose, and protect personal information through our washer and dryer rental services in Wilmington, NC." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://www.sudslaundryrentals.com/privacy-policy" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Design tokens (matches index.html) ────────────────── */
+    :root {
+      --navy:       #12386b;
+      --hero-blue:  #2f6db0;
+      --panel-blue: #2e86de;
+      --orange:     #e8821e;
+      --orange-dk:  #cf6f12;
+      --white:      #ffffff;
+      --light:      #eef4f9;
+      --text:       #1b1b1b;
+      --muted:      #555;
+
+      --font: 'Poppins', sans-serif;
+
+      --max-w: 1180px;
+      --radius: 10px;
+      --shadow: 0 6px 28px rgba(18,56,107,.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .skip-link {
+      position: absolute; top: -48px; left: 0; background: var(--navy);
+      color: var(--white); padding: 8px 16px; z-index: 999; transition: top .2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 6vw; }
+
+    /* ── Header / Nav (matches index.html) ─────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      box-shadow: 0 1px 8px rgba(18,56,107,.06);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 6vw; max-width: var(--max-w); margin: 0 auto;
+    }
+    .nav-logo img { height: 54px; width: auto; }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-links a {
+      font-weight: 500; font-size: 1rem; color: var(--text);
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--panel-blue); }
+
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .nav-toggle span {
+      display: block; width: 26px; height: 2px;
+      background: var(--navy); border-radius: 2px; transition: all .25s;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+    .nav-mobile {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: var(--navy); flex-direction: column;
+      align-items: center; justify-content: center; gap: 32px;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: 1.8rem; font-weight: 600; color: var(--white); }
+    .nav-mobile-close {
+      position: absolute; top: 18px; right: 18px;
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      background: none; border: none; cursor: pointer;
+      color: var(--white); font-size: 2.6rem; line-height: 1;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nav-mobile-close:hover { opacity: .75; }
+
+    /* ── Page banner ───────────────────────────────────────── */
+    .page-banner {
+      position: relative;
+      background: var(--hero-blue);
+      overflow: hidden;
+      padding: 64px 6vw 56px;
+    }
+    .page-banner-bg {
+      position: absolute; inset: 0;
+      background-image: url('images/Suds+hero+image.webp');
+      background-size: cover; background-position: center;
+      opacity: .50;
+    }
+    .page-banner-inner {
+      position: relative; z-index: 1;
+      max-width: var(--max-w); margin: 0 auto;
+    }
+    .page-banner h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700; color: var(--white);
+    }
+    .page-banner p {
+      color: rgba(255,255,255,.9);
+      margin-top: 10px; font-size: .95rem;
+    }
+
+    /* ── Policy content ────────────────────────────────────── */
+    .policy {
+      max-width: 860px; margin: 0 auto; padding: 64px 6vw 80px;
+    }
+    .policy .intro { color: var(--muted); font-size: 1rem; margin-bottom: 40px; }
+    .policy h2 {
+      font-size: 1.35rem; font-weight: 700; color: var(--navy);
+      margin: 44px 0 14px;
+    }
+    .policy h2:first-of-type { margin-top: 0; }
+    .policy p { color: var(--text); margin-bottom: 16px; font-size: .97rem; }
+    .policy ul.bullets {
+      list-style: disc; padding-left: 24px; margin-bottom: 16px;
+    }
+    .policy ul.bullets li { margin-bottom: 12px; color: var(--text); font-size: .97rem; }
+    .policy ul.bullets li strong { color: var(--navy); }
+    .policy .term { font-weight: 600; color: var(--navy); }
+
+    /* ── Footer (matches index.html) ───────────────────────── */
+    footer {
+      position: relative;
+      background: var(--navy);
+      color: rgba(255,255,255,.85);
+      padding: 56px 6vw 30px;
+      overflow: hidden;
+    }
+    .footer-bg {
+      position: absolute; inset: 0;
+      background-image: url('images/Suds+Footer.webp');
+      background-size: cover; background-position: center;
+      opacity: .30;
+    }
+    .footer-inner {
+      position: relative; z-index: 1;
+      max-width: var(--max-w); margin: 0 auto;
+      display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px;
+      align-items: start; margin-bottom: 44px;
+    }
+    .footer-logo img { height: 64px; width: auto; }
+    .footer-col a {
+      display: block; font-size: .95rem; margin-bottom: 12px;
+      text-decoration: underline; text-underline-offset: 3px;
+      transition: color .15s;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-contact a {
+      display: flex; align-items: center; gap: 10px; text-decoration: none;
+    }
+    .footer-contact svg { width: 18px; height: 18px; fill: var(--white); flex-shrink: 0; }
+    .footer-contact span { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-bottom {
+      position: relative; z-index: 1;
+      border-top: 1px solid rgba(255,255,255,.18);
+      padding-top: 22px; text-align: center;
+      font-size: .82rem; opacity: .75;
+    }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to Content</a>
+
+  <!-- ── HEADER ──────────────────────────────────────────────── -->
+  <header>
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="Suds Wilmington – Home">
+        <img src="images/Suds+Logo.webp" alt="Suds Wilmington" width="120" height="54" />
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#service-area">Service Area</a></li>
+      </ul>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile navigation">
+    <button class="nav-mobile-close" aria-label="Close menu">&times;</button>
+    <a href="index.html#about">About</a>
+    <a href="index.html#service-area">Service Area</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ── BANNER ─────────────────────────────────────────────── -->
+    <section class="page-banner" aria-labelledby="page-heading">
+      <div class="page-banner-bg" role="presentation" aria-hidden="true"></div>
+      <div class="page-banner-inner">
+        <h1 id="page-heading">Privacy Policy</h1>
+        <p>Effective date: January 9, 2026</p>
+      </div>
+    </section>
+
+    <!-- ── POLICY CONTENT ─────────────────────────────────────── -->
+    <article class="policy">
+
+      <p class="intro">
+        Suds Wilmington (“Suds,” “we,” “our,” or “us”) provides turnkey in-unit washer
+        and dryer rentals and related services for apartment complexes and multi-family
+        housing in Wilmington, North Carolina. This Privacy Policy explains how we collect,
+        use, disclose, and protect personal information we obtain through our website, email
+        communications, rental agreements, maintenance visits, tenant portals, and other
+        interactions (collectively, the “Services”). By using our Services or providing
+        personal information to us, you agree to the practices described in this policy.
+      </p>
+
+      <h2>Information We Collect</h2>
+      <p>We collect information needed to deliver and manage our Services. Types of information we collect include:</p>
+      <ul class="bullets">
+        <li><strong>Contact and identity information:</strong> name, property name, property manager name, mailing address, billing address, email address, phone number, job title, and company affiliation.</li>
+        <li><strong>Account and credentials:</strong> usernames, passwords, account IDs, authentication tokens, and security questions used for tenant portals or property manager access.</li>
+        <li><strong>Payment and billing information:</strong> payment card numbers, bank account numbers, billing address, transaction records, invoices, and payment history.</li>
+        <li><strong>Service and rental information:</strong> rental agreements, lease unit identifiers, installation addresses, equipment serial numbers, service requests, maintenance logs, repair history, and warranty information.</li>
+        <li><strong>Usage and device information:</strong> interactions with our website and tenant portal, IP address, device type, browser type, operating system, pages visited, date and time of visits, and diagnostic data.</li>
+        <li><strong>Communications content:</strong> messages, emails, text messages, or other communications you send to us, and our responses.</li>
+        <li><strong>Photographs and video:</strong> images or videos of equipment, installations, or property submitted by property managers, tenants, or on-site staff.</li>
+        <li><strong>Location data:</strong> approximate location derived from IP address or precise location if you voluntarily provide it for service coordination.</li>
+        <li><strong>Marketing preferences:</strong> opt-in/opt-out status and preferences for receiving marketing and promotional communications.</li>
+      </ul>
+
+      <h2>How We Collect Information</h2>
+      <p>We collect information in the following ways:</p>
+      <ul class="bullets">
+        <li><strong>Directly from you:</strong> when you fill out forms, create an account, request a quote, submit a service request, register equipment, make a payment, or otherwise interact with us.</li>
+        <li><strong>From property managers or other third parties:</strong> property owners, leasing offices, or management companies who provide tenant lists, unit information, or service requests.</li>
+        <li><strong>Automatically:</strong> through cookies, web beacons, analytics tools, and server logs when you visit our website or use our tenant portal.</li>
+        <li><strong>From service providers:</strong> vendors, payment processors, maintenance contractors, or other third-party service providers assisting us in delivering Services.</li>
+        <li><strong>From public sources:</strong> social media, business directories, or public records when relevant to our business relationship.</li>
+      </ul>
+
+      <h2>Use of Information</h2>
+      <p>We use collected information for legitimate business purposes, including to:</p>
+      <ul class="bullets">
+        <li>Provide, operate, and maintain our Services, including rental equipment provisioning and maintenance.</li>
+        <li>Process payments, invoices, and refunds, and prevent or detect fraud.</li>
+        <li>Manage accounts, verify identities, and authenticate access to portals.</li>
+        <li>Respond to service requests, perform repairs, and schedule maintenance.</li>
+        <li>Communicate with property managers, tenants, and service providers about account, billing, or service matters.</li>
+        <li>Improve and personalize our website, Services, and customer experience.</li>
+        <li>Send transactional communications and administrative notices.</li>
+        <li>Send marketing, promotions, and updates where permitted by law and with consent when required.</li>
+        <li>Comply with legal obligations, enforce our terms and agreements, and protect our rights, property, or safety and that of others.</li>
+        <li>Perform analytics, audits, and internal reporting.</li>
+      </ul>
+
+      <h2>Legal Bases for Processing</h2>
+      <p>
+        (For residents of the European Economic Area and other regions where applicable.)
+        When applicable, we rely on the following legal bases to process personal data:
+        contract performance, legitimate interests (such as service delivery, security, fraud
+        prevention, and business operations), consent (for certain marketing communications),
+        and compliance with legal obligations.
+      </p>
+
+      <h2>Sharing and Disclosure of Information</h2>
+      <p>We may share personal information with:</p>
+      <ul class="bullets">
+        <li><strong>Service providers and vendors</strong> who perform services on our behalf, such as payment processors, hosting providers, maintenance contractors, customer support, and analytics providers.</li>
+        <li><strong>Property managers, landlords, or management companies</strong> as necessary to provide and manage rentals and maintenance.</li>
+        <li><strong>Third parties in connection with a corporate transaction,</strong> such as a sale, merger, acquisition, reorganization, or asset transfer (in which case personal data may be transferred to the acquiring entity).</li>
+        <li><strong>Law enforcement, regulators, or other third parties</strong> when required by law, court order, or to respond to lawful requests, or to protect the rights, property, or safety of our company, employees, customers, or others.</li>
+        <li><strong>Other parties</strong> with your consent or at your direction.</li>
+      </ul>
+      <p>
+        We do not sell personal information for monetary consideration. Where “sale” or
+        similar terms are defined by applicable law, we will disclose personal information
+        only as permitted by law and solely for business purposes.
+      </p>
+
+    </article>
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer aria-label="Site footer">
+    <div class="footer-bg" role="presentation" aria-hidden="true"></div>
+    <div class="footer-inner">
+
+      <div class="footer-logo">
+        <a href="index.html" aria-label="Suds Wilmington – Home">
+          <img src="images/Suds+White+Logo.webp" alt="Suds Wilmington" width="160" height="64" loading="lazy" />
+        </a>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#service-area">Service Area</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </nav>
+
+      <div class="footer-col footer-contact">
+        <a href="https://www.facebook.com/profile.php?id=61580691160215" target="_blank" rel="noopener noreferrer" aria-label="Suds Wilmington on Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          <span>@SudsWilmington</span>
+        </a>
+        <a href="https://www.sudslaundryrentals.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Sudslaundryrentals.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.93 6h-2.95a15.65 15.65 0 00-1.38-3.56A8.03 8.03 0 0118.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 010-4h3.38a16.6 16.6 0 000 4H4.26zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 015.07 16zm2.95-8H5.07a7.99 7.99 0 014.33-3.56A15.65 15.65 0 008.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a14.87 14.87 0 010-4h4.68a14.87 14.87 0 010 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a7.99 7.99 0 01-4.33 3.56zM16.36 14a16.6 16.6 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"/></svg>
+          <span>Sudslaundryrentals.com</span>
+        </a>
+        <a href="tel:9108009041" aria-label="Call (910) 800 9041">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.2 2.2z"/></svg>
+          <span>(910) 800 9041</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026. All Rights Reserved</span>
+    </div>
+  </footer>
+
+  <!-- ── JS: mobile nav toggle ─────────────────────────────────── -->
+  <script>
+    const toggle    = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const closeBtn  = document.querySelector('.nav-mobile-close');
+
+    function openNav() {
+      mobileNav.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNav() {
+      mobileNav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    function toggleNav() {
+      mobileNav.classList.contains('open') ? closeNav() : openNav();
+    }
+
+    toggle.addEventListener('click', toggleNav);
+    closeBtn.addEventListener('click', closeNav);
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+  </script>
+
+</body>
+</html>

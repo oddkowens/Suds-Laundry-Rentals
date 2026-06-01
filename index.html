@@ -70,7 +70,7 @@
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 6vw; }
 
     /* Offset anchored sections so they aren't hidden behind the sticky header */
-    #about, #service-area, #why-suds, #how-it-works { scroll-margin-top: 90px; }
+    #about, #service-area, #why-suds, #how-it-works, #contact { scroll-margin-top: 90px; }
 
     /* ── Buttons ───────────────────────────────────────────── */
     .btn {
@@ -242,6 +242,63 @@
     .about-badge { display: flex; justify-content: center; }
     .about-badge img { max-width: 230px; }
 
+    /* ── Contact ───────────────────────────────────────────── */
+    #contact {
+      background: var(--navy);
+      color: var(--white);
+      padding: 78px 6vw;
+      text-align: center;
+    }
+    #contact h2 {
+      font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+      font-weight: 700; margin-bottom: 14px;
+    }
+    #contact .contact-intro {
+      max-width: 540px; margin: 0 auto 40px;
+      font-size: 1rem; opacity: .9;
+    }
+    .contact-form {
+      max-width: 540px; margin: 0 auto;
+      display: grid; gap: 16px;
+      text-align: left;
+    }
+    .contact-form .row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .contact-form label {
+      display: block; font-size: .82rem; font-weight: 500;
+      margin-bottom: 6px; opacity: .85;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      color: var(--white);
+      font-family: var(--font);
+      font-size: .95rem;
+      transition: border-color .15s, background .15s;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,.45); }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--orange);
+      background: rgba(255,255,255,.1);
+    }
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+    .contact-form .btn-primary {
+      justify-self: start; border: none; font-family: var(--font);
+    }
+    .form-status {
+      font-size: .95rem; margin-top: 4px; min-height: 1.2em;
+    }
+    .form-status.error   { color: #ffb4b4; }
+    .form-status.success { color: #b8f0c4; }
+
     /* ── Footer ────────────────────────────────────────────── */
     footer {
       position: relative;
@@ -295,6 +352,8 @@
       .how-img img { max-width: 260px; }
       .about-inner { grid-template-columns: 1fr; gap: 36px; text-align: center; }
       .about-badge { order: -1; }
+      .contact-form .row { grid-template-columns: 1fr; }
+      .contact-form .btn-primary { justify-self: stretch; text-align: center; }
       .footer-inner { grid-template-columns: 1fr; gap: 32px; }
     }
     @media (max-width: 640px) {
@@ -338,7 +397,7 @@
         <div class="hero-copy">
           <h1 id="hero-heading">Upgrade Your Amenities<br />Eliminate the Maintenance</h1>
           <p>Turnkey in-unit washer and dryer rentals for Apartment Complexes and Multi-Family Housing in Wilmington, NC</p>
-          <a href="mailto:landman@servicelaundryrentals.com?subject=Schedule%20a%20Meeting" class="btn btn-primary">Schedule a Meeting</a>
+          <a href="#contact" class="btn btn-primary">Schedule a Meeting</a>
         </div>
         <div class="hero-img">
           <img src="images/washing+machines+2.webp"
@@ -441,6 +500,65 @@
       </div>
     </section>
 
+    <!-- ── CONTACT ────────────────────────────────────────────── -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Ready to Upgrade Your Amenities?</h2>
+      <p class="contact-intro">
+        Tell us about your property and we'll put together a pricing package —
+        no commitment required.
+      </p>
+
+      <!--
+        ════════════════════════════════════════════════════════════════
+        SETUP: Replace YOUR_FORM_ID below with your real Formspree form ID.
+          1. Sign up free at https://formspree.io
+          2. Create a new form; it gives you an endpoint like
+             https://formspree.io/f/abcdwxyz
+          3. Paste the ID (the part after /f/) in place of YOUR_FORM_ID.
+        Until then, the form will not deliver messages.
+        ════════════════════════════════════════════════════════════════
+      -->
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        aria-label="Contact Suds Wilmington"
+      >
+        <div class="row">
+          <div>
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name" />
+          </div>
+          <div>
+            <label for="cf-company">Property / Company</label>
+            <input type="text" id="cf-company" name="company" placeholder="Property or company name" autocomplete="organization" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="you@example.com" required autocomplete="email" />
+          </div>
+          <div>
+            <label for="cf-phone">Phone</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="(910) 555-0123" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div>
+          <label for="cf-message">How can we help?</label>
+          <textarea id="cf-message" name="message" placeholder="Number of units, timeline, questions…"></textarea>
+        </div>
+
+        <!-- Honeypot field to deter spam bots (hidden from people) -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;" />
+
+        <button type="submit" class="btn btn-primary">Schedule a Meeting</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
   </main>
 
   <!-- ── FOOTER ────────────────────────────────────────────────── -->
@@ -506,6 +624,38 @@
     closeBtn.addEventListener('click', closeNav);
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+
+    /* ── Contact form (Formspree AJAX submit) ─────────────────── */
+    const form = document.querySelector('.contact-form');
+    if (form) {
+      const status = form.querySelector('.form-status');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.className = 'form-status';
+        status.textContent = 'Sending…';
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.reset();
+            status.className = 'form-status success';
+            status.textContent = 'Thanks! We\u2019ll be in touch shortly.';
+          } else {
+            const data = await res.json().catch(() => ({}));
+            status.className = 'form-status error';
+            status.textContent = (data.errors && data.errors.map(x => x.message).join(', '))
+              || 'Something went wrong. Please call us at (910) 800 9041.';
+          }
+        } catch (err) {
+          status.className = 'form-status error';
+          status.textContent = 'Network error. Please call us at (910) 800 9041.';
+        }
+      });
+    }
   </script>
 
 </body>
