@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "suds-laundry-rentals",
+  "compatibility_date": "2026-09-29",
+  "main": "src/index.js",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  // Required by `wrangler preview`, which Workers Builds runs for
+  // non-production branches.
+  "previews": {}
+}

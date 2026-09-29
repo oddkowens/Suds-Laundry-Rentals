@@ -12,13 +12,13 @@
   <meta property="og:url" content="https://www.sudslaundryrentals.com" />
   <meta property="og:type" content="website" />
   <meta property="og:description" content="Suds Wilmington offers turnkey in-unit washer and dryer rentals for apartment complexes and multi-family housing in Wilmington, NC, providing maintenance-free solutions to boost tenant satisfaction." />
-  <meta property="og:image" content="images/Suds+Logo.webp" />
+  <meta property="og:image" content="images/Suds-Logo.webp" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Suds Wilmington | Enhance Amenities Today – Rent Washers &amp; Dryers" />
   <meta name="twitter:description" content="Suds Wilmington offers turnkey in-unit washer and dryer rentals for apartment complexes and multi-family housing in Wilmington, NC, providing maintenance-free solutions to boost tenant satisfaction." />
-  <meta name="twitter:image" content="images/Suds+Logo.webp" />
+  <meta name="twitter:image" content="images/Suds-Logo.webp" />
 
   <link rel="canonical" href="https://www.sudslaundryrentals.com" />
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
@@ -141,7 +141,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('images/Suds+hero+image.webp');
+      background-image: url('images/Suds-hero-image.webp');
       background-size: cover; background-position: center;
       opacity: .55;
     }
@@ -220,7 +220,7 @@
     }
     .service-bg {
       position: absolute; inset: 0;
-      background-image: url('images/Wilmington+Riverwalk+Suds.webp');
+      background-image: url('images/Wilmington-Riverwalk-Suds.webp');
       background-size: cover; background-position: center;
       opacity: .45;
     }
@@ -309,7 +309,7 @@
     }
     .footer-bg {
       position: absolute; inset: 0;
-      background-image: url('images/Suds+Footer.webp');
+      background-image: url('images/Suds-Footer.webp');
       background-size: cover; background-position: center;
       opacity: .30;
     }
@@ -370,7 +370,7 @@
   <header>
     <nav class="nav-inner" aria-label="Main navigation">
       <a href="index.html" class="nav-logo" aria-label="Suds Wilmington – Home">
-        <img src="images/Suds+Logo.webp" alt="Suds Wilmington" width="120" height="54" />
+        <img src="images/Suds-Logo.webp" alt="Suds Wilmington" width="120" height="54" />
       </a>
       <ul class="nav-links" role="list">
         <li><a href="#about">About</a></li>
@@ -400,7 +400,7 @@
           <a href="#contact" class="btn btn-primary">Schedule a Meeting</a>
         </div>
         <div class="hero-img">
-          <img src="images/washing+machines+2.webp"
+          <img src="images/washing-machines-2.webp"
                alt="A pair of white front-loading washing machines side by side with digital control panels"
                width="560" height="420" />
         </div>
@@ -493,7 +493,7 @@
             <p>Suds Wilmington provides reliable, in-unit washer and dryer solutions without the cost or hassle of ownership. We are dedicated to friendly, dependable service.</p>
           </div>
           <div class="about-badge">
-            <img src="images/High+Quality+Equipment+Instagram+Post.webp"
+            <img src="images/High-Quality-Equipment-Instagram-Post.webp"
                  alt="High Quality Equipment badge" width="230" height="230" loading="lazy" />
           </div>
         </div>
@@ -508,19 +508,9 @@
         no commitment required.
       </p>
 
-      <!--
-        ════════════════════════════════════════════════════════════════
-        SETUP: Replace YOUR_FORM_ID below with your real Formspree form ID.
-          1. Sign up free at https://formspree.io
-          2. Create a new form; it gives you an endpoint like
-             https://formspree.io/f/abcdwxyz
-          3. Paste the ID (the part after /f/) in place of YOUR_FORM_ID.
-        Until then, the form will not deliver messages.
-        ════════════════════════════════════════════════════════════════
-      -->
       <form
         class="contact-form"
-        action="https://formspree.io/f/YOUR_FORM_ID"
+        action="/api/contact"
         method="POST"
         aria-label="Contact Suds Wilmington"
       >
@@ -568,7 +558,7 @@
 
       <div class="footer-logo">
         <a href="index.html" aria-label="Suds Wilmington – Home">
-          <img src="images/Suds+White+Logo.webp" alt="Suds Wilmington" width="160" height="64" loading="lazy" />
+          <img src="images/Suds-White-Logo.webp" alt="Suds Wilmington" width="160" height="64" loading="lazy" />
         </a>
       </div>
 
@@ -625,34 +615,39 @@
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
 
-    /* ── Contact form (Formspree AJAX submit) ─────────────────── */
+    /* ── Contact form ─────────────────────────────────────────
+       Sent by the site's own /api/contact endpoint (src/index.js), which
+       emails it via Resend. On failure the typed message is kept. */
     const form = document.querySelector('.contact-form');
     if (form) {
       const status = form.querySelector('.form-status');
+      const button = form.querySelector('button[type="submit"]');
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         status.className = 'form-status';
         status.textContent = 'Sending…';
+        button.disabled = true;
 
         try {
           const res = await fetch(form.action, {
             method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
+            body: JSON.stringify(Object.fromEntries(new FormData(form))),
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
           });
-          if (res.ok) {
+          const data = await res.json().catch(() => ({}));
+          if (res.ok && data.ok) {
             form.reset();
             status.className = 'form-status success';
             status.textContent = 'Thanks! We\u2019ll be in touch shortly.';
           } else {
-            const data = await res.json().catch(() => ({}));
             status.className = 'form-status error';
-            status.textContent = (data.errors && data.errors.map(x => x.message).join(', '))
-              || 'Something went wrong. Please call us at (910) 800 9041.';
+            status.textContent = (data.error ? data.error + ' ' : '') + 'You can also call us at (910) 800 9041.';
           }
         } catch (err) {
           status.className = 'form-status error';
           status.textContent = 'Network error. Please call us at (910) 800 9041.';
+        } finally {
+          button.disabled = false;
         }
       });
     }
