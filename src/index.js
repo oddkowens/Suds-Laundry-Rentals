@@ -4,7 +4,7 @@
 // assets in public/. The contact endpoint emails the inquiry via Resend (same
 // approach as oddnc.com), so delivery doesn't depend on the visitor's mail app.
 
-const RECIPIENTS = ['odd.kowens@gmail.com']; // TEMP: delivery test, Kyle only
+const RECIPIENTS = ['landman@servicelaundryrentals.com', 'odd.kowens@gmail.com'];
 // oddnc.com is the verified sending domain in ODD's Resend account.
 const SENDER = 'Suds Wilmington Website <website@oddnc.com>';
 
