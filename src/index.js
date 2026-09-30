@@ -61,8 +61,11 @@ async function handleContact(request, env) {
     return json({ ok: false, error: 'That email address does not look right.' }, 400);
   }
 
-  if (!env.RESEND_API_KEY) {
-    console.error('RESEND_API_KEY is not set — cannot send contact email');
+  // The Resend API key, stored as the Worker secret "Suds-Website-Email"
+  // (RESEND_API_KEY also accepted, the name used on oddnc.com).
+  const resendKey = env['Suds-Website-Email'] || env.RESEND_API_KEY;
+  if (!resendKey) {
+    console.error('Resend API key secret is not set — cannot send contact email');
     return json({ ok: false, error: "We couldn't send that just now." }, 503);
   }
 
@@ -81,7 +84,7 @@ async function handleContact(request, env) {
     response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        Authorization: `Bearer ${resendKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({

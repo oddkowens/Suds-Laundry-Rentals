@@ -8,9 +8,9 @@ Worker.
 - `src/index.js` — the Worker: serves `public/` and handles the contact form
   at `POST /api/contact`, emailing it via Resend to Robert
   (landman@servicelaundryrentals.com) and Kyle, from website@oddnc.com
-  (the verified sending domain in ODD's Resend account). Needs the Worker
-  secret `RESEND_API_KEY` (Settings → Variables and Secrets — not the Build
-  variables); without it the form says it couldn't send and suggests calling.
+  (the verified sending domain in ODD's Resend account). Needs the Resend API key as the Worker
+  secret `Suds-Website-Email` (Settings → Variables and Secrets — not the
+  Build variables; `RESEND_API_KEY` also works); without it the form says it couldn't send and suggests calling.
 - `wrangler.jsonc` — Worker `suds-laundry-rentals`; `previews: {}` is needed
   for Workers Builds' preview deploys of non-main branches.
 
